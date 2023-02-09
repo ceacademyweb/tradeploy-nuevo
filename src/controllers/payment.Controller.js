@@ -8,6 +8,10 @@ const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.pay
 
 const auth = { user: CLIENT, pass: SECRET };
 
+const server = process.env.PORT
+  ? 'https://tradeploy-nuevo-production.up.railway.app'
+  : 'http://localhost:5000';
+
 const createPayment = (req, res) => {
   const body = {
     intent: 'CAPTURE',
@@ -23,8 +27,8 @@ const createPayment = (req, res) => {
       brand_name: `TRADEPLOY`,
       landing_page: 'NO_PREFERENCE', // Default, para mas informacion https://developer.paypal.com/docs/api/orders/v2/#definition-order_application_context
       user_action: 'PAY_NOW', // Accion para que en paypal muestre el monto del pago
-      return_url: `http://localhost:5000/execute-payment`, // Url despues de realizar el pago
-      cancel_url: `http://localhost:5000/cancel-payment`, // Url despues de realizar el pago
+      return_url: `${server}/execute-payment`, // Url despues de realizar el pago
+      cancel_url: `${server}/cancel-payment`, // Url despues de realizar el pago
     },
   };
   //https://api-m.sandbox.paypal.com/v2/checkout/orders [POST]
