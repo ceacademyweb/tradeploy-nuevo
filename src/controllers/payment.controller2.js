@@ -15,7 +15,7 @@ const server = process.env.PORT
     ? 'https://tradeploy-nuevo-production.up.railway.app'
     : 'http://localhost:5000';
 const front  = process.env.PORT
-    ? 'https://tradeploy-nuevo-production.up.railway.app'
+    ? 'https://tradeploy.ceacademy.world'
     : 'http://localhost:5173';
 
 const createPayment = (req, res) => {
