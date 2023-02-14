@@ -35,7 +35,7 @@ const createPayment = (req, res) => {
             landing_page: 'NO_PREFERENCE', // Default, para mas informacion https://developer.paypal.com/docs/api/orders/v2/#definition-order_application_context
             user_action: 'PAY_NOW', // Accion para que en paypal muestre el monto del pago
             return_url: `${server}/execute-payment`, // Url despues de realizar el pago
-            cancel_url: `${server}/cancel-payment`, // Url despues de realizar el pago
+            cancel_url: `${front}`, // Url despues de realizar el pago
         },
     };
     //https://api-m.sandbox.paypal.com/v2/checkout/orders [POST]
