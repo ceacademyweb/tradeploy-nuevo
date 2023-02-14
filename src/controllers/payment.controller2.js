@@ -7,7 +7,7 @@ const Subscriptions = require('../models/UsersSubs.model');
 
 const CLIENT ='AVKimuRGPBTBkASwjuZbDHfutKxQUHqEGo_gDS9ki7NkdP2Sr1GC44ue-vboBYz0P7tL0snL0hscFuPl';
 const SECRET = 'EJ7qChCc3iMC5Q7UyFtkZEjX8LFK6SSxC1EozPRq1atzc9v7GO1ZuPHHDW4U5tfRzH9NDRqhbxWae54H';
-const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
+const PAYPAL_API = 'https://api-m.paypal.com' //https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
 
 const auth = { user: CLIENT, pass: SECRET };
 
@@ -26,7 +26,7 @@ const createPayment = (req, res) => {
             {
                 amount: {
                     currency_code: 'USD', //https://developer.paypal.com/docs/api/reference/currency-codes/
-                    value: '20',
+                    value: '1',
                 },
             },
         ],
