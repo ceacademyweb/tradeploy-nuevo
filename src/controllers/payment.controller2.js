@@ -31,7 +31,7 @@ const createPayment = (req, res) => {
       {
         amount: {
           currency_code: 'USD', //https://developer.paypal.com/docs/api/reference/currency-codes/
-          value: '200',
+          value: '100',
         },
       },
     ],
