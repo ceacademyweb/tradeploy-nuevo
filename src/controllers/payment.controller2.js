@@ -5,10 +5,13 @@ const now = dayjs().subtract(6, 'h');
 // const userSubsModel = require('../models/userSubs.model');
 const Subscriptions = require('../models/UsersSubs.model');
 
-const CLIENT =
-  'AVKimuRGPBTBkASwjuZbDHfutKxQUHqEGo_gDS9ki7NkdP2Sr1GC44ue-vboBYz0P7tL0snL0hscFuPl';
-const SECRET =
-  'EJ7qChCc3iMC5Q7UyFtkZEjX8LFK6SSxC1EozPRq1atzc9v7GO1ZuPHHDW4U5tfRzH9NDRqhbxWae54H';
+const dev = false;
+const CLIENT = dev
+  ? 'AVKimuRGPBTBkASwjuZbDHfutKxQUHqEGo_gDS9ki7NkdP2Sr1GC44ue-vboBYz0P7tL0snL0hscFuPl'
+  : 'AeRy2IWZyZBZ2e_28yd0VW6PGfgwydJ-eaL3505yFco2pGZW3Y8uogegYGh3kDUrQuLE9NobM-HLslG1';
+const SECRET = dev
+  ? 'EJ7qChCc3iMC5Q7UyFtkZEjX8LFK6SSxC1EozPRq1atzc9v7GO1ZuPHHDW4U5tfRzH9NDRqhbxWae54H'
+  : 'EJFSDXajo1PEdXdjFPXiooBZf2rpXmZjtllljDVVvBRPY7GzaF26T6j7I1IIYMdiZFKFunz-QAOGy7L4';
 const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
 
 const auth = { user: CLIENT, pass: SECRET };
