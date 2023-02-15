@@ -8,11 +8,11 @@ const Subscriptions = require('../models/UsersSubs.model');
 const dev = false;
 const CLIENT = dev
   ? 'AVKimuRGPBTBkASwjuZbDHfutKxQUHqEGo_gDS9ki7NkdP2Sr1GC44ue-vboBYz0P7tL0snL0hscFuPl'
-  : 'AeRy2IWZyZBZ2e_28yd0VW6PGfgwydJ-eaL3505yFco2pGZW3Y8uogegYGh3kDUrQuLE9NobM-HLslG1';
+  : 'AVEpSjzpQsCi_qke67nJ9WmUfAAlSqINs1aZ_vGppUuu16zV4wXtrce6oMijout9_45OJWzsyc21UTuA';
 const SECRET = dev
   ? 'EJ7qChCc3iMC5Q7UyFtkZEjX8LFK6SSxC1EozPRq1atzc9v7GO1ZuPHHDW4U5tfRzH9NDRqhbxWae54H'
-  : 'EJFSDXajo1PEdXdjFPXiooBZf2rpXmZjtllljDVVvBRPY7GzaF26T6j7I1IIYMdiZFKFunz-QAOGy7L4';
-const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
+  : 'EOk-yYCGUaUU5LEnXCMLhBvE_AM7RpfqQ8vFYJPcKCbTbEs93ClJEDKGmGvD-xjJvEhmzUzlQ_Xhjxml';
+const PAYPAL_API = 'https://api-m.paypal.com'; //https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
 
 const auth = { user: CLIENT, pass: SECRET };
 
@@ -31,7 +31,7 @@ const createPayment = (req, res) => {
       {
         amount: {
           currency_code: 'USD', //https://developer.paypal.com/docs/api/reference/currency-codes/
-          value: '1',
+          value: '200',
         },
       },
     ],
@@ -133,7 +133,16 @@ const executePayment = (req, res) => {
   );
 };
 
+const borrrartodos = (req, res) => {
+  Temo.find({}, (err, result) => {
+    for (let i = 0; i < result.lenght; i++) {
+      res.send(result[i]);
+    }
+  });
+};
+
 module.exports = {
   createPayment,
   executePayment,
+  borrrartodos,
 };
